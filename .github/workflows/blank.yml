@@ -12,7 +12,7 @@ jobs:
    name: Deploy to dev
    environment:
      name: dev
-   if:  startsWith(github.head_ref, 'develop')
+   if: startsWith(github.ref_name, 'feature/')
    runs-on: ubuntu-latest
    steps:
       - run: echo Deploy to dev 
