@@ -28,20 +28,4 @@ jobs:
     steps:
       - run: echo Deploy to testing 
         
-  deploy-staging:
-    name: Deploy to staging
-    environment:
-      name: Staging
-    if: github.event.pull_request.merged == true && startsWith(github.head_ref, 'main')
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo Deploy to staging 
-        
-  deploy-production:
-    name: Deploy to production
-    environment:
-      name: Production
-    needs: [deploy-staging]
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo Deploy to production
+ 
