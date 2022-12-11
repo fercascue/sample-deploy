@@ -9,10 +9,10 @@ on:
 
 jobs:
   deploy-dev: 
-   name: Deploy to testing
+   name: Deploy to dev
    environment:
      name: dev
-   if: github.event.ref == 'refs/heads/feature'
+   if: github.event.ref == 'refs/heads/feature/*'
    runs-on: ubuntu-latest
    steps:
       - run: echo Deploy to dev 
