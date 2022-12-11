@@ -12,7 +12,7 @@ jobs:
    name: Deploy to dev
    environment:
      name: dev
-   if: startsWith(github.ref_name, 'feature/')
+   if: github.event.pull_request.merged == true && startsWith(github.head_ref, 'feature/')
    runs-on: ubuntu-latest
    steps:
       - run: echo Deploy to dev 
